@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="materialize/materialize.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="styles/main.css">
+
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <div class="navbar-fixed">
+    <nav class="grey deep-orange accent-2">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo">Logo</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a href="index.html">Acasa</a>
+            </li>
+            <li>
+              <a href="#about">Despre</a>
+            </li>
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <ul class="sidenav" id="mobile-demo">
+    <li>
+      <a href="index.html">Acasa</a>
+    </li>
+    <li>
+      <a href="#about">Despre</a>
+    </li>
+    <li>
+      <a href="contact.html">Contact</a>
+    </li>
+  </ul>
+
+  <!-- CONTACT TEXT -->
+<div class="container" id="divContactText">
+  <p class="flow-text" id="contactTextHead">Sunteti interesati de o proprietate ?</p>
+  <p class="flow-text" id="contactText">Scrieti-ne un mesaj si va vom contacta in cel mai scurt timp !</p>
+</div>
+  <!-- CONTACT FORM -->
+  <div class="row">
+    <div class="col xs12 s12 m12 l5">
+      <form>
+        <div class="input-field col xs12 s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Nume</label>
+        </div>
+        <div class="input-field col xs12 s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Prenume</label>
+        </div>
+        <div class="input-field col xs12 s6">
+          <i class="material-icons prefix">phone</i>
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Telefon</label>
+        </div>
+        <div class="input-field col xs12 s6">
+          <i class="material-icons prefix">email</i>
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+          <span class="helper-text" data-error="Format incorect" data-success="right"></span>
+        </div>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">create</i>
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <label for="textarea1">Mesajul dumneavoastra</label>
+        </div>
+        <button class="btn waves-effect waves-light deep-orange accent-2" type="submit" name="action" id="msgBtn">Trimite
+          <i class="material-icons right">send</i>
+        </button>
+      </form>
+    </div>
+
+    <div class="col xs12 s12 m12 l7" id="map">
+      <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBdq5QUcUERwoX4qicgxFxmy7Ia3tN4_4E
+      &q=Strada+Teilor+27-5,+Pitești" allowfullscreen></iframe>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="page-footer deep-orange accent-2">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Contact</h5>
+          <p class="grey-text text-lighten-4">07xx.xxx.xxx</p>
+        </div>
+        <div class="col l4 offset-l2 s12" id="footerSocial">
+          <h5 class="white-text">Social Media</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a class="grey-text text-lighten-3" href="#!"><i class="fab fa-instagram"></i></a></li>
+            <li><a class="grey-text text-lighten-3" href="#!"><i class="fab fa-twitter"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2014 Copyright Text
+      </div>
+    </div>
+  </footer>
+
+  <!-- END -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="scripts/materialize.min.js" charset="utf-8"></script>
+  <script src="scripts/main.js"></script>
+
+  < script >
+  // sidenav
+
+  $(document).ready(function(){
+  $('.sidenav').sidenav();
+  });
+
+
+  </script>
+
+    </body>
+
+    </html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase-firestore.js"></script>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="materialize/materialize.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" href="styles/main.css">
+
+
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <div class="navbar-fixed">
+    <nav class="grey deep-orange accent-2">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo">Logo</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a href="#home">Acasa</a>
+            </li>
+            <li>
+              <a href="#about">Despre</a>
+            </li>
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <ul class="sidenav" id="mobile-demo">
+    <li>
+      <a href="index.html">Acasa</a>
+    </li>
+    <li>
+      <a href="#about">Despre</a>
+    </li>
+    <li>
+      <a href="contact.html">Contact</a>
+    </li>
+  </ul>
+
+  <!-- ADD FORM -->
+  <form>
+    <hr>
+    <div class="row">
+      <div class="col s4">
+        <div class="input-field col s6">
+          <input id="pretImobil" type="text" class="validate">
+          <label for="pretImobil">Pret</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="suprafataImobil" type="text" class="validate">
+          <label for="suprafataImobil">Suprafata</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="camereImobil" type="text" class="validate">
+          <label for="camereImobil">Numar Camere</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="anImobil" type="text" class="validate">
+          <label for="anImobil">An Constructie</label>
+        </div>
+      </div>
+      <div class="col s6">
+        <div class="input-field col s12">
+          <textarea id="descriereImobil" class="materialize-textarea"></textarea>
+          <label for="descriereImobil">Descriere Imobil</label>
+        </div>
+      </div>
+    </div>
+    <button class="btn waves-effect waves-light" type="submit" name="action" id="adaugaBtn">Adauga Proiect
+        <i class="material-icons right">add</i>
+      </button>
+    <hr>
+  </form>
+
+  <!-- POSTS -->
+  <div class="col s12">
+    <div class="row" id="anunturiContainer">
+      <div class="col s12 m4 l3 xl2">
+        <div class="card medium">
+          <div class="card-image">
+            <img src="img/flat1.jpg" class="imgCard">
+          </div>
+          <div class="card-content">
+            <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.
+              I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+          </div>
+          <div id="detaliiImob">
+            <p><i class="tiny material-icons">euro_symbol</i> 300</p>
+            <p><i class="tiny material-icons">aspect_ratio</i> 62 m²</p>
+            <p><i class="tiny material-icons">local_hotel</i> 2</p>
+            <p><i class="tiny material-icons">location_city</i> 2017</p>
+          </div>
+          <div class="card-action">
+            <a href="#">Detalii</a>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m4 l3 xl2">
+        <div class="card medium">
+          <div class="card-image">
+            <img src="img/flat2.jpg" class="imgCard">
+          </div>
+          <div class="card-content">
+            <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+          </div>
+          <div id="detaliiImob">
+            <p><i class="tiny material-icons">euro_symbol</i> 300</p>
+            <p><i class="tiny material-icons">aspect_ratio</i> 62 m²</p>
+            <p><i class="tiny material-icons">local_hotel</i> 2</p>
+            <p><i class="tiny material-icons">location_city</i> 2017</p>
+          </div>
+          <div class="card-action">
+            <a href="#">Detalii</a>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m4 l3 xl2">
+        <div class="card medium">
+          <div class="card-image">
+            <img src="img/flat3.jpg" class="imgCard">
+          </div>
+          <div class="card-content">
+            <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+          </div>
+          <div id="detaliiImob">
+            <p><i class="tiny material-icons">euro_symbol</i> 300</p>
+            <p><i class="tiny material-icons">aspect_ratio</i> 62 m²</p>
+            <p><i class="tiny material-icons">local_hotel</i> 2</p>
+            <p><i class="tiny material-icons">location_city</i> 2017</p>
+          </div>
+          <div class="card-action">
+            <a href="#">Detalii</a>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m4 l3 xl2">
+        <div class="card medium">
+          <div class="card-image">
+            <img src="img/flat1.jpg" class="imgCard">
+          </div>
+          <div class="card-content">
+            <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+          </div>
+          <div id="detaliiImob">
+            <p><i class="tiny material-icons">euro_symbol</i> 300</p>
+            <p><i class="tiny material-icons">aspect_ratio</i> 62 m²</p>
+            <p><i class="tiny material-icons">local_hotel</i> 2</p>
+            <p><i class="tiny material-icons">location_city</i> 2017</p>
+          </div>
+          <div class="card-action">
+            <a href="#">Detalii</a>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m4 l3 xl2">
+        <div class="card medium">
+          <div class="card-image">
+            <img src="img/flat2.jpg" class="imgCard">
+          </div>
+          <div class="card-content">
+            <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+          </div>
+          <div id="detaliiImob">
+            <p><i class="tiny material-icons">euro_symbol</i> 300</p>
+            <p><i class="tiny material-icons">aspect_ratio</i> 62 m²</p>
+            <p><i class="tiny material-icons">local_hotel</i> 2</p>
+            <p><i class="tiny material-icons">location_city</i> 2017</p>
+          </div>
+          <div class="card-action">
+            <a href="#">Detalii</a>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m4 l3 xl2">
+        <div class="card medium">
+          <div class="card-image">
+            <img src="img/flat3.jpg" class="imgCard">
+          </div>
+          <div class="card-content">
+            <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+          </div>
+          <div id="detaliiImob">
+            <p><i class="tiny material-icons">euro_symbol</i> 300</p>
+            <p><i class="tiny material-icons">aspect_ratio</i> 62 m²</p>
+            <p><i class="tiny material-icons">local_hotel</i> 2</p>
+            <p><i class="tiny material-icons">location_city</i> 2017</p>
+          </div>
+          <div class="card-action">
+            <a href="#">Detalii</a>
+          </div>
+        </div>
+      </div>
+      <ul id="lista-anunturi"></ul>
+    </div>
+  </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="page-footer deep-orange accent-2">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Contact</h5>
+          <p class="grey-text text-lighten-4">07xx.xxx.xxx</p>
+        </div>
+        <div class="col l4 offset-l2 s12" id="footerSocial">
+          <h5 class="white-text">Social Media</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a class="grey-text text-lighten-3" href="#!"><i class="fab fa-instagram"></i></a></li>
+            <li><a class="grey-text text-lighten-3" href="#!"><i class="fab fa-twitter"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2014 Copyright Text
+      </div>
+    </div>
+  </footer>
+
+  <!-- END -->
+
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAKXTXbUjk4SDICz9ob4NsA_TGnqtipX4E",
+      authDomain: "ideal-casa.firebaseapp.com",
+      databaseURL: "https://ideal-casa.firebaseio.com",
+      projectId: "ideal-casa",
+      storageBucket: "ideal-casa.appspot.com",
+      messagingSenderId: "911074968760"
+    };
+    firebase.initializeApp(config);
+    const db = firebase.firestore();
+    db.settings({ timestampsInSnapshots: true });
+  </script>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="scripts/materialize.min.js" charset="utf-8"></script>
+  <script src="scripts/main.js"></script>
+
+
+</body>
+
+</html>

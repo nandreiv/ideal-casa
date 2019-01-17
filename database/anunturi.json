@@ -1,0 +1,10 @@
+[{
+  "descriere" : "bla bla bla",
+  "pret" : 300,
+  "suprafata" : 50,
+  "camere": 2,
+  "an" : 1989,
+  "imagini" : ["https://firebasestorage.googleapis.com/v0/b/ideal-casa.appspot.com/o/anunt1%2Fflat1.jpg?alt=media&token=42f545a9-b3b8-4478-bc3e-f5d8e205f4d1",
+               "https://firebasestorage.googleapis.com/v0/b/ideal-casa.appspot.com/o/anunt1%2Fflat2.jpg?alt=media&token=8acff154-44ce-4790-a673-76a102bb97ed",
+               "https://firebasestorage.googleapis.com/v0/b/ideal-casa.appspot.com/o/anunt1%2Fflat3.jpg?alt=media&token=50783ccb-1236-43df-a0db-f6181b7606ad"]
+  }]
