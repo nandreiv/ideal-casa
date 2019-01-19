@@ -1,5 +1,5 @@
 
-const anunturiList = document.querySelector('#lista-anunturi');
+const anunturiList = document.querySelector('#anunturiContainer');
 const form = document.querySelector('#addAnunt');
 
 // Create elements and render
@@ -11,7 +11,8 @@ function renderAnunturi(doc){
   let pret = doc.data().pret;
   let suprafata = doc.data().suprafata;
 
-  let str = `<div class="col s12 m4 l3 xl2">
+
+  let str = `<div class="col s12 m6 l4 xl3" data-id='${doc.id}'>
               <div class="card medium">
                 <div class="card-image">
                   <img src="img/flat2.jpg" class="imgCard">
@@ -26,18 +27,26 @@ function renderAnunturi(doc){
                 <p><i class="tiny material-icons">location_city</i> ${an}</p>
               </div>
               <div class="card-action">
-                <a href="#">Detalii</a>
+                <button class="btn waves-effect waves-light" type="button" name="modify" id="modificaBtn">
+                  <i class="material-icons">edit</i>
+                </button>
+                <button class="btn waves-effect waves-light" type="button" name="delete" id="stergeBtn">
+                  <i class="material-icons">delete</i>
+                </button>
               </div>
             </div>
           </div>`
 
   anunturiList.insertAdjacentHTML('afterbegin',str);
 
-  console.log(an);
-  console.log(camere);
-  console.log(descriere);
-  console.log(pret);
-  console.log(suprafata);
+  // Deleting data from database
+  let sterge = document.querySelector('#stergeBtn');
+
+  sterge.addEventListener('click',(e) => {
+    e.stopPropagation();
+    let id = e.target.parentElement.parentElement.parentElement.getAttribute('data-id');
+    db.collection('anunturi').doc(id).delete();
+  })
 }
 
 // Getting data from database

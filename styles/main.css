@@ -26,6 +26,17 @@ footer {
   margin-bottom: 10px;
 }
 
+.card-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-action button {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 #imgContainer h2 {
   position: absolute;
   bottom: 10px;
