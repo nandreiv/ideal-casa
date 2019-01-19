@@ -40,4 +40,54 @@ db.collection('anunturi').get().then((snapshot) => {
   snapshot.docs.forEach(doc => {
     renderAnunturi(doc);
   });
+});
+
+// Filtered render
+let searchFilter = document.querySelector('#searchFilter');
+
+searchFilter.addEventListener('click',(e) => {
+  let pret = document.querySelector('#filtruPret').value;
+  let supraf = document.querySelector('#filtruSupraf').value;
+  document.querySelector('#anunturiContainer').innerHTML = "";
+  db.collection('anunturi').where('pret', '<',`${pret}`).get().then((snapshot) => {
+    snapshot.docs.forEach(doc => {
+      renderAnunturi(doc);
+    });
+  });
+});
+
+// Sorting results by price
+let sortPrice = document.querySelector('#sortPret');
+
+sortPrice.addEventListener('click', (e) => {
+  document.querySelector('#anunturiContainer').innerHTML = "";
+  db.collection('anunturi').orderBy('pret').get().then((snapshot) => {
+    snapshot.docs.forEach(doc => {
+      renderAnunturi(doc);
+    });
+  });
+});
+
+// Sorting results by surface
+let sortSupraf = document.querySelector('#sortSupraf');
+
+sortSupraf.addEventListener('click', (e) => {
+  document.querySelector('#anunturiContainer').innerHTML = "";
+  db.collection('anunturi').orderBy('suprafata').get().then((snapshot) => {
+    snapshot.docs.forEach(doc => {
+      renderAnunturi(doc);
+    });
+  });
+})
+
+// Sorting results by rooms
+let sortCamere = document.querySelector('#sortCamere');
+
+sortCamere.addEventListener('click', (e) => {
+  document.querySelector('#anunturiContainer').innerHTML = "";
+  db.collection('anunturi').orderBy('suprafata').get().then((snapshot) => {
+    snapshot.docs.forEach(doc => {
+      renderAnunturi(doc);
+    });
+  });
 })

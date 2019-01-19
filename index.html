@@ -69,9 +69,9 @@
     <hr>
     <div id="sortareRow">
       <p class="lead"> Ordoneaza dupa: </p>
-      <a class="waves-effect waves-teal btn-flat"><i class="material-icons">euro_symbol</i> Pret</a>
-      <a class="waves-effect waves-teal btn-flat"><i class="material-icons">aspect_ratio</i> Suprafata</a>
-      <a class="waves-effect waves-teal btn-flat"><i class="material-icons">local_hotel</i> Camere</a>
+      <button class="waves-effect waves-teal btn-flat" id="sortPret"><i class="material-icons">euro_symbol</i> Pret</button>
+      <button class="waves-effect waves-teal btn-flat" id="sortSupraf"><i class="material-icons">aspect_ratio</i> Suprafata</button>
+      <button class="waves-effect waves-teal btn-flat" id="sortCamere"><i class="material-icons">local_hotel</i> Camere</button>
     </div>
     <hr>
   </div>
@@ -81,38 +81,32 @@
     <div class="col s2">
       <form>
         <div class="input-field col s12">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Pret</label>
+          <input id="filtruPret" type="text" class="validate" placeholder="Pret maxim">
+          <label for="filtruPret">Pret</label>
         </div>
         <div class="input-field col s12">
-          <select>
-            <option value="" disabled selected>Suprafata minima</option>
-            <option value="1">35</option>
-            <option value="2">45</option>
-            <option value="3">60</option>
-          </select>
-          <label>Suprafata</label>
+          <input id="filtruSupraf" type="text" class="validate" placeholder="Suprafata minima">
+          <label for="filtruSupraf">Suprafata</label>
         </div>
         <div class="input-field col s12">
-          <select>
-            <option value="" disabled selected>Numar camere</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-          </select>
-          <label>Camere</label>
+          <input id="filtruCamere" type="text" class="validate" placeholder="Camere minim">
+          <label for="filtruCamere">Camere</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="filtruAn" type="text" class="validate" placeholder="An constructie">
+          <label for="filtruAn">An</label>
         </div>
         <div class="input-field col s12">
           <select>
             <option value="" disabled selected>Compartimentare</option>
-            <option value="1">Decomandat</option>
-            <option value="2">Semidecomandat</option>
-            <option value="3">Nedecomandat</option>
-            <option value="3">Circular</option>
+            <option value="decomandat">Decomandat</option>
+            <option value="semidecomandat">Semidecomandat</option>
+            <option value="nedecomandat">Nedecomandat</option>
+            <option value="circular">Circular</option>
           </select>
           <label>Compartimentare</label>
         </div>
-        <button class="btn waves-effect waves-light deep-orange accent-2" type="submit" name="action">Cauta
+        <button class="btn waves-effect waves-light deep-orange accent-2" type="button" name="action" id="searchFilter">Cauta
           <i class="material-icons right">search</i>
         </button>
       </form>
@@ -120,131 +114,7 @@
 
     <!-- POSTS -->
     <div class="col s10">
-      <div class="row" id="anunturiContainer">
-        <div class="col s12 m4 l3">
-          <div class="card medium">
-            <div class="card-image">
-              <img src="img/flat1.jpg" class="imgCard">
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.
-                I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div id="detaliiImob">
-              <p><i class="tiny material-icons">euro_symbol</i> 300</p>
-              <p><i class="tiny material-icons">aspect_ratio</i> 62 m²</p>
-              <p><i class="tiny material-icons">local_hotel</i> 2</p>
-              <p><i class="tiny material-icons">location_city</i> 2017</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Detalii</a>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m4 l3">
-          <div class="card medium">
-            <div class="card-image">
-              <img src="img/flat2.jpg" class="imgCard">
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div id="detaliiImob">
-              <p><i class="tiny material-icons">euro_symbol</i> 300</p>
-              <p><i class="tiny material-icons">aspect_ratio</i> 62 m²</p>
-              <p><i class="tiny material-icons">local_hotel</i> 2</p>
-              <p><i class="tiny material-icons">location_city</i> 2017</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Detalii</a>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m4 l3">
-          <div class="card medium">
-            <div class="card-image">
-              <img src="img/flat3.jpg" class="imgCard">
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div id="detaliiImob">
-              <p><i class="tiny material-icons">euro_symbol</i> 300</p>
-              <p><i class="tiny material-icons">aspect_ratio</i> 62 m²</p>
-              <p><i class="tiny material-icons">local_hotel</i> 2</p>
-              <p><i class="tiny material-icons">location_city</i> 2017</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Detalii</a>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m4 l3">
-          <div class="card medium">
-            <div class="card-image">
-              <img src="img/flat1.jpg" class="imgCard">
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div id="detaliiImob">
-              <p><i class="tiny material-icons">euro_symbol</i> 300</p>
-              <p><i class="tiny material-icons">aspect_ratio</i> 62 m²</p>
-              <p><i class="tiny material-icons">local_hotel</i> 2</p>
-              <p><i class="tiny material-icons">location_city</i> 2017</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Detalii</a>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m4 l3">
-          <div class="card medium">
-            <div class="card-image">
-              <img src="img/flat2.jpg" class="imgCard">
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div id="detaliiImob">
-              <p><i class="tiny material-icons">euro_symbol</i> 300</p>
-              <p><i class="tiny material-icons">aspect_ratio</i> 62 m²</p>
-              <p><i class="tiny material-icons">local_hotel</i> 2</p>
-              <p><i class="tiny material-icons">location_city</i> 2017</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Detalii</a>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m4 l3">
-          <div class="card medium">
-            <div class="card-image">
-              <img src="img/flat3.jpg" class="imgCard">
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div id="detaliiImob">
-              <p><i class="tiny material-icons">euro_symbol</i> 300</p>
-              <p><i class="tiny material-icons">aspect_ratio</i> 62 m²</p>
-              <p><i class="tiny material-icons">local_hotel</i> 2</p>
-              <p><i class="tiny material-icons">location_city</i> 2017</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Detalii</a>
-            </div>
-          </div>
-        </div>
-        <ul id="lista-anunturi"></ul>
-      </div>
+      <div class="row" id="anunturiContainer"></div>
     </div>
   </div>
 
