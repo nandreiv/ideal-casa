@@ -1,5 +1,6 @@
 
 const anunturiList = document.querySelector('#lista-anunturi');
+const form = document.querySelector('#addAnunt');
 
 // Create elements and render
 function renderAnunturi(doc){
@@ -37,12 +38,24 @@ function renderAnunturi(doc){
   console.log(descriere);
   console.log(pret);
   console.log(suprafata);
-  
-
 }
 
+// Getting data from database
 db.collection('anunturi').get().then((snapshot) => {
   snapshot.docs.forEach(doc => {
     renderAnunturi(doc);
   });
+})
+
+// Adding data to database
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  db.collection('anunturi').add({
+    an: form.anImobil.value,
+    camere: form.camereImobil.value,
+    descriere: form.descriereImobil.value,
+    pret: form.pretImobil.value,
+    suprafata: form.suprafataImobil.value
+  });
+  form.reset();
 })
