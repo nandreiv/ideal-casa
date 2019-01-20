@@ -8,12 +8,6 @@ footer {
   font-size: 10px;
 }
 
-.container-img {
-  position: relative;
-  text-align: center;
-  color: black;
-}
-
 .card-content p {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -37,14 +31,16 @@ footer {
   margin-right: 10px;
 }
 
-#imgContainer h2 {
-  position: absolute;
+.nav-wrapper a {
+  color: #000;
+}
+
+#imgContainer {
   bottom: 10px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 36px;
-  font-family: 'Comfortaa', cursive;
-  background-color: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  min-height: 350px;
+  background: url('../img/land_cover.jpg') no-repeat center #eee;
+  background-size: cover;
 }
 
 .imgCard {

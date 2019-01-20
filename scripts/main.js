@@ -17,20 +17,20 @@ function renderAnunturi(doc){
                 <div class="card-image">
                   <img src="img/flat2.jpg" class="imgCard">
                 </div>
-              <div class="card-content">
-                <p>${descriere}</p>
+                <div class="card-content">
+                  <p>${descriere}</p>
+                </div>
+                <div id="detaliiImob">
+                  <p><i class="tiny material-icons">euro_symbol</i> ${pret}</p>
+                  <p><i class="tiny material-icons">aspect_ratio</i> ${suprafata} m²</p>
+                  <p><i class="tiny material-icons">local_hotel</i> ${camere}</p>
+                  <p><i class="tiny material-icons">location_city</i> ${an}</p>
+                </div>
+                <div class="card-action">
+                  <a href="window.location='detalii.html?id=${doc.id}'">Detalii</a>
+                </div>
               </div>
-              <div id="detaliiImob">
-                <p><i class="tiny material-icons">euro_symbol</i> ${pret}</p>
-                <p><i class="tiny material-icons">aspect_ratio</i> ${suprafata} m²</p>
-                <p><i class="tiny material-icons">local_hotel</i> ${camere}</p>
-                <p><i class="tiny material-icons">location_city</i> ${an}</p>
-              </div>
-              <div class="card-action">
-                <a href="#">Detalii</a>
-              </div>
-            </div>
-          </div>`
+            </div>`
 
   anunturiList.insertAdjacentHTML('afterbegin',str);
 }
