@@ -1,5 +1,6 @@
 
 const anunturiList = document.querySelector('#anunturiContainer');
+const detaliiShow = document.querySelector('#detaliiContainer');
 const form = document.querySelector('#addAnunt');
 
 // Create elements and render
@@ -27,12 +28,42 @@ function renderAnunturi(doc){
                   <p><i class="tiny material-icons">location_city</i> ${an}</p>
                 </div>
                 <div class="card-action">
-                  <a href="window.location='detalii.html?id=${doc.id}'">Detalii</a>
+                  <a href="#" class='${doc.id}'>Detalii</a>
                 </div>
               </div>
             </div>`
 
   anunturiList.insertAdjacentHTML('afterbegin',str);
+}
+
+function showDetails(doc) {
+
+  document.querySelector('#anunturiContainer').innerHTML = "";
+
+  let an = doc.data().an;
+  let camere = doc.data().camere;
+  let descriere = doc.data().descriere;
+  let pret = doc.data().pret;
+  let suprafata = doc.data().suprafata;
+
+
+  let str = `<div class="col s12">
+                <div class="image">
+                  <img src="img/flat2.jpg" class="imgCard">
+                </div>
+                <div class="content">
+                  <p>${descriere}</p>
+                </div>
+                <div id="detaliiImob">
+                  <p><i class="tiny material-icons">euro_symbol</i> ${pret}</p>
+                  <p><i class="tiny material-icons">aspect_ratio</i> ${suprafata} m²</p>
+                  <p><i class="tiny material-icons">local_hotel</i> ${camere}</p>
+                  <p><i class="tiny material-icons">location_city</i> ${an}</p>
+                </div>
+            </div>`
+
+  detaliiShow.insertAdjacentHTML('afterbegin',str);
+
 }
 
 // Getting data from database
@@ -41,6 +72,27 @@ db.collection('anunturi').get().then((snapshot) => {
     renderAnunturi(doc);
   });
 });
+
+// Showing setails for the card
+let targetNode = document.getElementById('anunturiContainer');
+let setup = { attributes: true, childList: true, subtree: true };
+var callback = function(mutationsList, observer) {
+    for(var mutation of mutationsList) {
+        if (mutation.type == 'childList') {
+            let detalii = document.querySelector('.card-action a').getAttribute('class');
+            db.collection('anunturi').doc(`${detalii}`).get().then((snapshot) => {
+              snapshot.doc.forEach(doc => {
+                showDetails(doc);
+              })
+            });
+        }
+        else if (mutation.type == 'attributes') {
+            console.log('The ' + mutation.attributeName + ' attribute was modified.');
+        }
+    }
+};
+var observer = new MutationObserver(callback);
+observer.observe(targetNode, setup);
 
 // Filtered render
 let searchFilter = document.querySelector('#searchFilter');
