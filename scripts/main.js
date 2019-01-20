@@ -51,18 +51,24 @@ function showDetails(elem) {
 
       console.log(an, camere, descriere, pret, suprafata);
 
-      let str = `<div class="col s12 anunt">
-                    <div class="image">
-                      <img src="img/flat2.jpg" class="imgCard">
+      let str = `<div class="row anunt">
+                    <div class="image col s12">
+                    <div class="pics">
+                      <a class="carousel-item" href="img/flat1.jpg"><img src="img/flat1.jpg"></a>
+                      <a class="carousel-item" href="#two!"><img src="img/flat2.jpg"></a>
+                      <a class="carousel-item" href="#three!"><img src="img/flat3.jpg"></a>
+                      <a class="carousel-item" href="#four!"><img src="img/flat1.jpg"></a>
+                      <a class="carousel-item" href="#five!"><img src="img/flat2.jpg"></a>
                     </div>
-                    <div class="content">
-                      <p>${descriere}</p>
                     </div>
-                    <div id="detaliiImob">
+                    <div class="col s12" id="detaliiImob">
                       <p><i class="tiny material-icons">euro_symbol</i> ${pret}</p>
                       <p><i class="tiny material-icons">aspect_ratio</i> ${suprafata} m²</p>
                       <p><i class="tiny material-icons">local_hotel</i> ${camere}</p>
                       <p><i class="tiny material-icons">location_city</i> ${an}</p>
+                    </div>
+                    <div class="content col s12">
+                      <p>${descriere}</p>
                     </div>
                 </div>`
 
@@ -132,3 +138,9 @@ sortCamere.addEventListener('click', (e) => {
     });
   });
 })
+
+// Carousel details
+detaliiShow.addEventListener('DOMNodeInserted', function() {
+    var elems = document.querySelectorAll('.carousel');
+    var instances = M.Carousel.init();
+  });
