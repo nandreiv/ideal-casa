@@ -4,6 +4,11 @@ footer {
   width: 100%;
 }
 
+hr {
+  border: 0;
+  border-top: 1px solid #000;
+}
+
 .input-field option {
   font-size: 10px;
 }
