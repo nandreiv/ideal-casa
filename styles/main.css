@@ -145,7 +145,7 @@ footer {
   margin-left: 10px;
 }
 
-#adaugaBtn {
+#adaugaBtnDiv {
   display: flex;
   justify-content:flex-end;
 }

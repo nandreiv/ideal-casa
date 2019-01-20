@@ -53,6 +53,7 @@ function renderAnunturi(doc){
   let modificaAnunt = document.querySelector('#modificaAnuntBtn');
 
   modifica.addEventListener('click', (e) => {
+
     e.stopPropagation();
     let id = e.target.parentElement.parentElement.parentElement.parentElement.getAttribute('data-id');
     db.collection('anunturi').doc(id).get().then((snapshot) => {
@@ -61,7 +62,9 @@ function renderAnunturi(doc){
         form.descriereImobil.value = document.getElementById('cardDescriere').innerHTML;
         form.pretImobil.value = document.getElementById('cardPret').innerHTML;
         form.suprafataImobil.value = document.getElementById('cardSupraf').innerHTML;
+        document.getElementById('adaugaBtn').classList.add('disabled');
       });
+
     modificaAnunt.addEventListener('click', (e) => {
       e.preventDefault();
       db.collection('anunturi').doc(id).update({
