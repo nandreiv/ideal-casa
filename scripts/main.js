@@ -34,6 +34,7 @@ function renderAnunturi(doc) {
   anunturiList.insertAdjacentHTML('afterbegin', str);
 }
 
+// Showing setails for the card
 function showDetails(elem) {
 
   let id = elem.parentElement.parentElement.parentElement.getAttribute('data-id');
@@ -82,9 +83,6 @@ db.collection('anunturi').get().then((snapshot) => {
   });
 });
 
-// Showing setails for the card
-
-
 // Filtered render
 let searchFilter = document.querySelector('#searchFilter');
 
@@ -104,7 +102,7 @@ let sortPrice = document.querySelector('#sortPret');
 
 sortPrice.addEventListener('click', (e) => {
   document.querySelector('#anunturiContainer').innerHTML = "";
-  db.collection('anunturi').orderBy('pret').get().then((snapshot) => {
+  db.collection('anunturi').orderBy('pret', 'desc').get().then((snapshot) => {
     snapshot.docs.forEach(doc => {
       renderAnunturi(doc);
     });
