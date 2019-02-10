@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa|Lobster');
 
 body {
-  background-color: #eee;
+  background-color: #ddd;
 }
 
 footer {
@@ -14,13 +14,13 @@ hr {
 }
 
 .bluenav {
-  background-color: #eee;
-  height: 80px;
+  background-color: #ccc;
+  height: 90px;
   color: #03224c;
 }
 
 .navbar-fixed {
-  height: 80px;
+  height: 90px;
   color: #03224c;
 }
 
@@ -30,21 +30,37 @@ hr {
   justify-content: center;
 }
 
+.nav-wrapper ul {
+  margin-top: 10px;
+}
+
+.nav-wrapper a {
+  color: #03224c;
+}
+
 .brand-logo {
   font-family: 'Lobster', cursive;
+  
 }
 
 .topmenu li {
   color: #03224c;
 }
 
+.filters h5 {
+  font-family: 'Comfortaa', cursive;
+  font-size: 20px;
+  color: #03224c;
+}
+
 #logoImg {
-  background-color: #eee;
+  background-color: #ccc;
   height: 80px;
 }
 
 .bluefooter {
-  background-color: #03224c;
+  background-color: #ccc;
+  color: #f4661b;
 }
 
 .input-field option {
@@ -73,6 +89,11 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+}
+
+.card-action p {
+  color: #fff
 }
 
 .card-action button {
@@ -177,19 +198,30 @@ hr {
   margin-right: 15px;
 }
 .footer-main {
-  color: #fff;
+  color: #03224c;
+  font-family: lobster;
 }
 
 .footer-base {
+  font-family: comfortaa;
   background-color: #f4661b;
+  color: #03224c;
   height: 40px;
+  border-top: 1px solid #03224c;
+  font-size: 12px;
 }
 
 #footerSocial ul {
   display: flex;
+  color: #03224c;
 }
 #footerSocial ul li {
   margin-right: 15px;
+  color: #f4661b;
+}
+
+#footerContact {
+  color: #03224c;
 }
 
 #footerContact hr {
@@ -230,11 +262,11 @@ hr {
 }
 
 .detaliiBtn {
-  background-color: #f4661b;
+  background-color: #b84106;
 }
 
 .detaliiBtn:hover {
-  background-color: #03224c;
+  background-color: #f4661b;
 }
 
 .pics img {

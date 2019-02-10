@@ -26,6 +26,7 @@ function renderAnunturi(doc) {
                   <p><i class="tiny material-icons">location_city</i> ${an}</p>
                 </div>
                 <div class="card-action">
+                  <p>Calea Craiovei, 46, Pitesti</p>
                   <button class="btn wave-effect waves-light detaliiBtn" onclick='showDetails(this)'>Detalii</button>
                 </div>
               </div>
