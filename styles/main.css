@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Comfortaa:700');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Lobster');
+
+body {
+  background-color: #eee;
+}
 
 footer {
   width: 100%;
@@ -9,8 +13,46 @@ hr {
   border-top: 1px solid #000;
 }
 
+.bluenav {
+  background-color: #eee;
+  height: 80px;
+  color: #03224c;
+}
+
+.navbar-fixed {
+  height: 80px;
+  color: #03224c;
+}
+
+.nav-wrapper {
+  font-family: 'Comfortaa', cursive;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-logo {
+  font-family: 'Lobster', cursive;
+}
+
+.topmenu li {
+  color: #03224c;
+}
+
+#logoImg {
+  background-color: #eee;
+  height: 80px;
+}
+
+.bluefooter {
+  background-color: #03224c;
+}
+
 .input-field option {
   font-size: 10px;
+}
+
+.card {
+  background-color: #03224c;
 }
 
 .card-content p {
@@ -19,10 +61,12 @@ hr {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #fff;
 }
 
 .detaliiImob {
   margin-bottom: 10px;
+  color: #fff;
 }
 
 .card-action {
@@ -37,7 +81,7 @@ hr {
 }
 
 .nav-wrapper a {
-  color: #000;
+  color: #fff;
 }
 
 .anunt {
@@ -86,11 +130,15 @@ hr {
   margin-right: 5px;
 }
 
+#searchFilter {
+  background-color: #f4661b;
+}
+
 #imgContainer {
   bottom: 10px;
   width: 100%;
   min-height: 350px;
-  background: url('../img/land_cover.jpg') no-repeat center #eee;
+  background: url('../img/landing2.jpg') no-repeat center #eee;
   background-size: cover;
 }
 
@@ -104,23 +152,37 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #03224c;
+}
+
+#sortareRow button {
+  color: #03224c; 
 }
 
 #sortareRow a {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #03224c;
 }
 
 #detaliiImob {
   display: flex;
   align-items: baseline;
   justify-content: center;
-  color: #4a148c;
+  color: #fff;
 }
 
 #detaliiImob > * {
   margin-right: 15px;
+}
+.footer-main {
+  color: #fff;
+}
+
+.footer-base {
+  background-color: #f4661b;
+  height: 40px;
 }
 
 #footerSocial ul {
@@ -128,6 +190,14 @@ hr {
 }
 #footerSocial ul li {
   margin-right: 15px;
+}
+
+#footerContact hr {
+  border-top: 1px solid #f4661b; 
+}
+
+#footerSocial hr {
+  border-top: 1px solid #f4661b; 
 }
 
 #divContactText p {
@@ -157,6 +227,14 @@ hr {
 
 #modificaAnuntBtn {
   margin-left: 10px;
+}
+
+.detaliiBtn {
+  background-color: #f4661b;
+}
+
+.detaliiBtn:hover {
+  background-color: #03224c;
 }
 
 .pics img {

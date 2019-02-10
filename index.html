@@ -7,8 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase-firestore.js"></script>
+  
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="materialize/materialize.min.css">
@@ -25,20 +24,20 @@
   <!-- NAVBAR -->
 
   <div class="navbar-fixed">
-    <nav class="blue lighten-4">
+    <nav class="bluenav">
       <div class="container">
         <div class="nav-wrapper">
-          <a href="index.html" class="brand-logo">Logo</a>
+          <a href="index.html" class="brand-logo"><img id="logoImg" src="img/logo.png"></a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-          <ul class="right hide-on-med-and-down">
+          <ul class="right hide-on-med-and-down topmenu">
             <li>
-              <a href="index.html">Acasa</a>
+              <a class="topA" href="index.html" style="color: #f4661b; font-family: Lobster; font-size: 20px;">Acasa</a>
             </li>
             <li>
-              <a href="#about">Despre</a>
+              <a class="topA" href="#about" style="color: #f4661b; font-family: Lobster; font-size: 20px;">Despre</a>
             </li>
             <li>
-              <a href="contact.html">Contact</a>
+              <a class="topA" href="contact.html" style="color: #f4661b; font-family: Lobster; font-size: 20px;">Contact</a>
             </li>
           </ul>
         </div>
@@ -119,37 +118,40 @@
   </div>
 
   <!-- FOOTER -->
-  <footer class="page-footer blue lighten-4">
-    <div class="container">
+  <footer class="page-footer bluefooter">
+    <div class="container footer-main">
       <div class="row">
-        <div class="col l6 s12">
-          <h5 class="black-text">Contact</h5>
+        <div class="col l6 s12" id="footerContact">
+          <h5 class="white-text">Contact</h5>
           <hr>
-          <p class="black-text">07xx.xxx.xxx</p>
-          <p class="black-text">Orarul nostru:</p>
-          <p class="black-text">Luni-Vineri: 09:00 - 18:00</p>
-          <p class="black-text">Sambata: 09:00 - 12:00</p>
-          <p class="black-text">Duminica: Inchis</p>
+          <p class="white-text">07xx.xxx.xxx</p>
+          <p class="white-text">Orarul nostru:</p>
+          <p class="white-text">Luni-Vineri: 09:00 - 18:00</p>
+          <p class="white-text">Sambata: 09:00 - 12:00</p>
+          <p class="white-text">Duminica: Inchis</p>
         </div>
         <div class="col l4 offset-l2 s12" id="footerSocial">
-          <h5 class="black-text">Social Media</h5>
+          <h5 class="white-text">Social Media</h5>
           <hr>
           <ul>
-            <li><a class="black-text text-lighten-3" href="#!"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a class="black-text text-lighten-3" href="#!"><i class="fab fa-instagram"></i></a></li>
-            <li><a class="black-text text-lighten-3" href="#!"><i class="fab fa-twitter"></i></a></li>
+            <li><a class="white-text text-lighten-3" href="#!"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a class="white-text text-lighten-3" href="#!"><i class="fab fa-instagram"></i></a></li>
+            <li><a class="white-text text-lighten-3" href="#!"><i class="fab fa-twitter"></i></a></li>
           </ul>
         </div>
       </div>
     </div>
-    <div class="footer-copyright">
-      <div class="container black-text">
+    <div class="footer-base">
+      <div class="container white-text">
         © 2014 Copyright
       </div>
     </div>
   </footer>
 
   <!-- END -->
+
+  <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase-firestore.js"></script>
 
   <script>
     // Initialize Firebase
