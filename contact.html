@@ -21,20 +21,20 @@
   <!-- NAVBAR -->
 
   <div class="navbar-fixed">
-    <nav class="blue lighten-4">
+    <nav class="bluenav">
       <div class="container">
         <div class="nav-wrapper">
-          <a href="#!" class="brand-logo">Logo</a>
+          <a href="index.html" class="brand-logo"><img id="logoImg" src="img/logo.png"></a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-          <ul class="right hide-on-med-and-down">
+          <ul class="right hide-on-med-and-down topmenu">
             <li>
-              <a href="index.html">Acasa</a>
+              <a class="topA" href="index.html" style="color: #f4661b; font-family: Lobster; font-size: 20px;">Acasa</a>
             </li>
             <li>
-              <a href="#about">Despre</a>
+              <a class="topA" href="#about" style="color: #f4661b; font-family: Lobster; font-size: 20px;">Despre</a>
             </li>
             <li>
-              <a href="contact.html">Contact</a>
+              <a class="topA" href="contact.html" style="color: #f4661b; font-family: Lobster; font-size: 20px;">Contact</a>
             </li>
           </ul>
         </div>
@@ -61,34 +61,29 @@
   <!-- CONTACT FORM -->
   <div class="row">
     <div class="col xs12 s12 m12 l5">
-      <form>
+      <form action="mailto:office@idealimob.ro" method="post" enctype="text/plain">
         <div class="input-field col xs12 s6">
           <i class="material-icons prefix">account_circle</i>
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Nume</label>
+          <input id="last_name" type="text" class="validate" name="nume" placeholder="Nume">
         </div>
         <div class="input-field col xs12 s6">
           <i class="material-icons prefix">account_circle</i>
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Prenume</label>
+          <input id="last_name" type="text" class="validate" name="prenume" placeholder="Prenume">
         </div>
         <div class="input-field col xs12 s6">
           <i class="material-icons prefix">phone</i>
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Telefon</label>
+          <input id="last_name" type="text" class="validate" name="telefon" placeholder="Telefon">
         </div>
         <div class="input-field col xs12 s6">
           <i class="material-icons prefix">email</i>
-          <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
+          <input id="email" type="email" class="validate" name="mail" placeholder="Mail">
           <span class="helper-text" data-error="Format incorect" data-success="right"></span>
         </div>
         <div class="input-field col s12">
           <i class="material-icons prefix">create</i>
-          <textarea id="textarea1" class="materialize-textarea"></textarea>
-          <label for="textarea1">Mesajul dumneavoastra</label>
+          <input id="textarea1" class="materialize-textarea" name="mesaj" placeholder="Mesaj...">
         </div>
-        <button class="btn waves-effect waves-light deep-orange accent-2" type="submit" name="action" id="msgBtn">Trimite
+        <button class="btn waves-effect waves-light deep-orange accent-2" type="submit" name="action" id="msgBtn" onclick="window.open('mailto:test@example.com?subject=subject&body=body');">Trimite
           <i class="material-icons right">send</i>
         </button>
       </form>
@@ -102,26 +97,30 @@
   </div>
 
   <!-- FOOTER -->
-  <footer class="page-footer blue lighten-4">
-    <div class="container">
+  <footer class="page-footer bluefooter">
+    <div class="container footer-main">
       <div class="row">
-        <div class="col l6 s12">
-          <h5 class="black-text">Contact</h5>
-          <p class="black-text text-lighten-4">07xx.xxx.xxx</p>
+        <div class="col l6 s12" id="footerContact">
+          <h5 class="">Contact</h5>
+          <hr>
+          <p class="">07xx.xxx.xxx</p>
+          <p class="">office@idealimob.ro</p>
+          <p class="">Luni-Vineri: 09:00 - 18:00</p>
         </div>
         <div class="col l4 offset-l2 s12" id="footerSocial">
-          <h5 class="black-text">Social Media</h5>
+          <h5 class="">Social Media</h5>
+          <hr>
           <ul>
-            <li><a class="black-text text-lighten-3" href="#!"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a class="black-text text-lighten-3" href="#!"><i class="fab fa-instagram"></i></a></li>
-            <li><a class="black-text text-lighten-3" href="#!"><i class="fab fa-twitter"></i></a></li>
+            <li><a class="" href="#!"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a class="" href="#!"><i class="fab fa-instagram"></i></a></li>
+            <li><a class="" href="#!"><i class="fab fa-twitter"></i></a></li>
           </ul>
         </div>
       </div>
     </div>
-    <div class="footer-copyright">
-      <div class="container black-text">
-        © 2014 Copyright Text
+    <div class="footer-base">
+      <div class="container ">
+        © 2019 Copyright
       </div>
     </div>
   </footer>
@@ -132,14 +131,11 @@
   <script src="scripts/materialize.min.js" charset="utf-8"></script>
   <script src="scripts/main.js"></script>
 
-  < script >
+  <script>
   // sidenav
-
   $(document).ready(function(){
   $('.sidenav').sidenav();
   });
-
-
   </script>
 
     </body>
