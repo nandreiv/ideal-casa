@@ -10,12 +10,13 @@ function renderAnunturi(doc){
   let descriere = doc.data().descriere;
   let pret = doc.data().pret;
   let suprafata = doc.data().suprafata;
+  let imagini = doc.data().imagini;
 
 
   let str = `<div class="col s12 m6 l4 xl3" data-id='${doc.id}'>
               <div class="card medium">
                 <div class="card-image">
-                  <img src="img/flat2.jpg" class="imgCard">
+                  <img src="${imagini}" class="imgCard">
                 </div>
                 <div class="card-content">
                   <p>${descriere}</p>

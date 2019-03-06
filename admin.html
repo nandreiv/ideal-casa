@@ -25,20 +25,20 @@
   <!-- NAVBAR -->
 
   <div class="navbar-fixed">
-    <nav class="blue lighten-4">
+    <nav class="bluenav">
       <div class="container">
         <div class="nav-wrapper">
-          <a href="#!" class="brand-logo">Logo</a>
+          <a href="index.html" class="brand-logo"><img id="logoImg" src="img/logo_s.png"></a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-          <ul class="right hide-on-med-and-down">
+          <ul class="right hide-on-med-and-down topmenu">
             <li>
-              <a href="#home">Acasa</a>
+              <a class="topA" href="index.html" style="color: #f4661b; font-family: Lobster; font-size: 20px;">Acasa</a>
             </li>
             <li>
-              <a href="#about">Despre</a>
+              <a class="topA" href="#about" style="color: #f4661b; font-family: Lobster; font-size: 20px;">Despre</a>
             </li>
             <li>
-              <a href="contact.html">Contact</a>
+              <a class="topA" href="contact.html" style="color: #f4661b; font-family: Lobster; font-size: 20px;">Contact</a>
             </li>
           </ul>
         </div>
@@ -92,7 +92,7 @@
         <div class="file-field input-field">
           <div class="btn">
             <span>Browse</span>
-            <input type="file" multiple />
+            <input type="file" multiple id="inputfile">
           </div>
           <div class="file-path-wrapper">
             <input class="file-path validate" type="text" placeholder="Adaugati mai multe poze" id="files"/>
@@ -115,31 +115,36 @@
   <div class="row" id="anunturiContainer"></div>
 
   <!-- FOOTER -->
-  <footer class="page-footer blue lighten-4">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="black-text">Contact</h5>
-          <p class="black-text text-lighten-4">07xx.xxx.xxx</p>
-        </div>
-        <div class="col l4 offset-l2 s12" id="footerSocial">
-          <h5 class="black-text">Social Media</h5>
-          <ul>
-            <li><a class="black-text text-lighten-3" href="#!"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a class="black-text text-lighten-3" href="#!"><i class="fab fa-instagram"></i></a></li>
-            <li><a class="black-text text-lighten-3" href="#!"><i class="fab fa-twitter"></i></a></li>
-          </ul>
+    <footer class="page-footer bluefooter">
+      <div class="container footer-main">
+        <div class="row">
+          <div class="col l6 s12" id="footerContact">
+            <h5 class="">Contact</h5>
+            <hr>
+            <p class="">07xx.xxx.xxx</p>
+            <p class="">office@idealimob.ro</p>
+            <p class="">Luni-Vineri: 09:00 - 18:00</p>
+          </div>
+          <div class="col l4 offset-l2 s12" id="footerSocial">
+            <h5 class="">Social Media</h5>
+            <hr>
+            <ul>
+              <li><a class="" href="#!"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a class="" href="#!"><i class="fab fa-instagram"></i></a></li>
+              <li><a class="" href="#!"><i class="fab fa-twitter"></i></a></li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-        © 2014 Copyright Text
+      <div class="footer-base">
+        <div class="container ">
+          © 2019 Copyright
+        </div>
       </div>
-    </div>
-  </footer>
-
+    </footer>
   <!-- END -->
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
 
   <script>
     // Initialize Firebase
@@ -153,9 +158,6 @@
     };
     firebase.initializeApp(config);
     const db = firebase.firestore();
-    db.settings({
-      timestampsInSnapshots: true
-    });
   </script>
 
 

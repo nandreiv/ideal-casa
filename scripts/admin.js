@@ -2,6 +2,8 @@
 const anunturiList = document.querySelector('#anunturiContainer');
 const form = document.querySelector('#addAnunt');
 
+
+
 // Create elements and render
 function renderAnunturi(doc){
 
@@ -10,12 +12,13 @@ function renderAnunturi(doc){
   let descriere = doc.data().descriere;
   let pret = doc.data().pret;
   let suprafata = doc.data().suprafata;
+  let imagini = doc.data().imagini;
 
 
   let str = `<div class="col s12 m6 l4 xl3" data-id='${doc.id}'>
               <div class="card medium">
                 <div class="card-image">
-                  <img src="img/flat2.jpg" class="imgCard">
+                  <img src="${imagini}" class="imgCard">
                 </div>
               <div class="card-content">
                 <p id="cardDescriere">${descriere}</p>
@@ -26,7 +29,7 @@ function renderAnunturi(doc){
                 <i class="tiny material-icons">local_hotel</i><p id="cardCamere">${camere}</p>
                 <i class="tiny material-icons">location_city</i><p id="cardAn">${an}</p>
               </div>
-              <div class="card-action">
+              <div class="card-action admin-action">
                 <button class="btn waves-effect waves-light" type="button" name="modify" id="modificaBtn">
                   <i class="material-icons">edit</i>
                 </button>
@@ -44,7 +47,7 @@ function renderAnunturi(doc){
 
   sterge.addEventListener('click',(e) => {
     e.stopPropagation();
-    let id = e.target.parentElement.parentElement.parentElement.getAttribute('data-id');
+    let id = e.target.parentElement.parentElement.parentElement.parentElement.getAttribute('data-id');
     db.collection('anunturi').doc(id).delete();
   });
 
@@ -94,12 +97,58 @@ form.addEventListener('submit', (e) => {
     camere: form.camereImobil.value,
     descriere: form.descriereImobil.value,
     pret: form.pretImobil.value,
-    suprafata: form.suprafataImobil.value
+    suprafata: form.suprafataImobil.value,
+    imagini: newPhotos
   });
   form.reset();
+  newPhotos = [];
 })
 
 // Form listener
-form.addEventListener('change', (e) => {
-  document.querySelectorAll('input').removeAttribute('placeholder');
-})
+//form.addEventListener('change', (e) => {
+//  document.querySelectorAll('input').removeAttribute('placeholder');
+//})
+
+let database = firebase.database();
+let storage = firebase.storage();
+let imgURL;
+
+function getURL() {
+  storage.ref('anunt1/' + photo.name).getDownloadURL().then(function(url){
+          var xhr = new XMLHttpRequest();
+          xhr.responseType = 'blob';
+          xhr.onload = function(event) {
+            var blob = xhr.response;
+          };
+          xhr.open('GET', url);
+          xhr.send();
+          console.log(url);
+        })
+
+}
+
+let newPhotos = [];
+
+function addPicture(){
+  var fileInput = document.querySelector("#inputfile");
+  var files = fileInput.files;
+  // cache files.length 
+  var fl = files.length;
+  var i = 0;
+  var urls;
+
+  while ( i < fl) {
+      // localize file var in the loop
+      var photos = files[i];
+      let photonavn = storage.ref('anunt1/' + photos.name);
+      photonavn.put(photos);
+      var link = storage.ref('anunt1/'+photos.name);
+      link.getDownloadURL().then(function(url){
+        newPhotos.push(url);
+      })
+      i++;
+  }
+}
+
+
+document.querySelector("#inputfile").onchange=addPicture;

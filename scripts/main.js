@@ -10,11 +10,12 @@ function renderAnunturi(doc) {
   let descriere = doc.data().descriere;
   let pret = doc.data().pret;
   let suprafata = doc.data().suprafata;
+  let imagini = doc.data().imagini;
 
   let str = `<div class="col s12 m6 l4 xl3" data-id='${doc.id}'>
               <div class="card medium">
                 <div class="card-image">
-                  <img src="img/flat2.jpg" class="imgCard">
+                  <img src="${imagini}" class="imgCard">
                 </div>
                 <div class="card-content">
                   <p>${descriere}</p>
@@ -26,7 +27,6 @@ function renderAnunturi(doc) {
                   <p><i class="tiny material-icons">location_city</i> ${an}</p>
                 </div>
                 <div class="card-action">
-                  <p>Calea Craiovei, 46, Pitesti</p>
                   <button class="btn wave-effect waves-light detaliiBtn" onclick='showDetails(this)'>Detalii</button>
                 </div>
               </div>
@@ -48,20 +48,21 @@ function showDetails(elem) {
       let camere = doc.data().camere;
       let descriere = doc.data().descriere;
       let pret = doc.data().pret;
-      let suprafata = doc.data().suprafata;
+      let suprafata = doc.data().suprafata;7
+      let imagini = doc.data().imagini;
 
       console.log(an, camere, descriere, pret, suprafata);
 
+      for (var i in imagini) {
+        document.querySelector("#detaliiContainer").insertAdjacentHTML(
+        'afterbegin',
+        `<div class="col m4 pics">
+              <a href="${imagini[i]}"><img class="card-img-top" alt="" src="${imagini[i]}"></a>
+          </div>`
+      )
+      }
+
       let str = `<div class="row anunt">
-                    <div class="image col s12">
-                    <div class="pics">
-                      <a class="carousel-item" href="img/flat1.jpg"><img src="img/flat1.jpg"></a>
-                      <a class="carousel-item" href="#two!"><img src="img/flat2.jpg"></a>
-                      <a class="carousel-item" href="#three!"><img src="img/flat3.jpg"></a>
-                      <a class="carousel-item" href="#four!"><img src="img/flat1.jpg"></a>
-                      <a class="carousel-item" href="#five!"><img src="img/flat2.jpg"></a>
-                    </div>
-                    </div>
                     <div class="col s12" id="detaliiImob">
                       <p><i class="tiny material-icons">euro_symbol</i> ${pret}</p>
                       <p><i class="tiny material-icons">aspect_ratio</i> ${suprafata} m²</p>

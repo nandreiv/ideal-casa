@@ -47,20 +47,59 @@ hr {
   color: #03224c;
 }
 
+#welcome {
+  font-family: 'Comfortaa', cursive;
+  color: #03224c;
+  text-align: center;
+}
+
+#welcome hr {
+  width: 80%;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.filters {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 .filters h5 {
   font-family: 'Comfortaa', cursive;
-  font-size: 20px;
+  font-size: 18px;
   color: #03224c;
+  text-align: center;
+}
+
+.formFilters {
+  text-align: center;
+  align-items: center;
+}
+
+.input-field input:focus + label {
+   color: #03224c !important;
+ }
+
+ul.dropdown-content.select-dropdown li span {
+    color: #03224c; 
+}
+
+.row .input-field input:focus {
+ border-bottom: 1px solid #03224c !important;
+ box-shadow: 0 1px 0 0 #03224c !important
 }
 
 #logoImg {
   background-color: #ccc;
   height: 80px;
+  margin-top: 5px;
 }
 
 .bluefooter {
   background-color: #ccc;
   color: #f4661b;
+  border-top: 1px solid #03224c;
 }
 
 .input-field option {
@@ -90,6 +129,12 @@ hr {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  color: #fff;
+}
+
+.admin-action {
+  display: flex;
+  flex-direction: row;
 }
 
 .card-action p {
@@ -152,15 +197,17 @@ hr {
 }
 
 #searchFilter {
-  background-color: #f4661b;
+  background-color: #03224c;
+  border-radius: 10px;
 }
 
 #imgContainer {
   bottom: 10px;
   width: 100%;
   min-height: 350px;
-  background: url('../img/landing2.jpg') no-repeat center #eee;
+  background: url('../img/landing3.jpg') no-repeat center #eee;
   background-size: cover;
+  border-bottom: 1px solid #03224c;
 }
 
 #imgPresentation {
@@ -206,7 +253,7 @@ hr {
   font-family: comfortaa;
   background-color: #f4661b;
   color: #03224c;
-  height: 40px;
+  height: 30px;
   border-top: 1px solid #03224c;
   font-size: 12px;
 }
@@ -222,6 +269,10 @@ hr {
 
 #footerContact {
   color: #03224c;
+}
+
+#footerContact p {
+  font-family: 'Comfortaa', cursive;
 }
 
 #footerContact hr {
@@ -246,6 +297,7 @@ hr {
 #msgBtn {
   margin-top: 15px;
   margin-bottom: 15px;
+  background-color: #03224c;
 }
 
 #adaugaPoze {
@@ -259,6 +311,14 @@ hr {
 
 #modificaAnuntBtn {
   margin-left: 10px;
+}
+
+#modificaBtn {
+  background-color: #79CDCD ;
+}
+
+#stergeBtn {
+  background-color: #DC143C;
 }
 
 .detaliiBtn {

@@ -16,6 +16,16 @@
 
   <link rel="stylesheet" href="styles/main.css">
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134279945-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-134279945-1');
+  </script>
+
 
 
 </head>
@@ -63,53 +73,6 @@
     <img src="" alt="" id="imgPresentation">
   </div>
 
-  <!-- SORT FUNCTIONS -->
-  <div class="row">
-    <hr>
-    <div id="sortareRow">
-      <p class="lead"> Ordoneaza dupa: </p>
-      <button class="waves-effect waves-teal btn-flat" id="sortPret"><i class="material-icons">euro_symbol</i> Pret</button>
-      <button class="waves-effect waves-teal btn-flat" id="sortSupraf"><i class="material-icons">aspect_ratio</i> Suprafata</button>
-      <button class="waves-effect waves-teal btn-flat" id="sortCamere"><i class="material-icons">local_hotel</i> Camere</button>
-    </div>
-    <hr>
-  </div>
-
-  <!-- FILTERS -->
-  <div class="row">
-    <div class="col s2">
-      <form>
-        <div class="input-field col s12">
-          <input id="filtruPret" type="text" class="validate" placeholder="Pret maxim">
-          <label for="filtruPret">Pret</label>
-        </div>
-        <div class="input-field col s12">
-          <input id="filtruSupraf" type="text" class="validate" placeholder="Suprafata minima">
-          <label for="filtruSupraf">Suprafata</label>
-        </div>
-        <div class="input-field col s12">
-          <input id="filtruCamere" type="text" class="validate" placeholder="Camere minim">
-          <label for="filtruCamere">Camere</label>
-        </div>
-        <div class="input-field col s12">
-          <input id="filtruAn" type="text" class="validate" placeholder="An constructie">
-          <label for="filtruAn">An</label>
-        </div>
-        <div class="input-field col s12">
-          <select>
-            <option value="" disabled selected>Compartimentare</option>
-            <option value="decomandat">Decomandat</option>
-            <option value="semidecomandat">Semidecomandat</option>
-            <option value="nedecomandat">Nedecomandat</option>
-            <option value="circular">Circular</option>
-          </select>
-          <label>Compartimentare</label>
-        </div>
-        <button class="btn waves-effect waves-light deep-orange accent-2" type="button" name="action" id="searchFilter">Cauta
-          <i class="material-icons right">search</i>
-        </button>
-      </form>
-    </div>
 
     <!-- POSTS -->
     <div class="col s10">
